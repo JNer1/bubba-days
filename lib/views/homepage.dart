@@ -20,6 +20,8 @@ class _HomePageState extends State<HomePage> {
         backgroundColor: shade850,
         selectedItemColor: Colors.indigo[300],
         unselectedItemColor: Colors.grey[600],
+        showUnselectedLabels: false,
+        showSelectedLabels: true,
         currentIndex: currentIndex,
         onTap: (index) => setState(() => currentIndex = index),
         items: const [
