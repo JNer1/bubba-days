@@ -11,18 +11,14 @@ class NextButton extends StatelessWidget {
     return Align(
       alignment: Alignment.centerRight,
       child: TextButton(
-        // style: OutlinedButton.styleFrom(
-        //   shape: RoundedRectangleBorder(
-        //     borderRadius: BorderRadius.circular(8),
-        //   ),
-        // ),
         onPressed: index != 0
             ? () {
                 Navigator.pushReplacement(
-                    context,
-                    MaterialPageRoute(
-                      builder: (context) => BlogDetailsView(index: index - 1),
-                    ));
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => BlogDetailsView(index: index - 1),
+                  ),
+                );
               }
             : null,
         child: Text(
@@ -31,7 +27,7 @@ class NextButton extends StatelessWidget {
               ? const TextStyle(
                   color: Colors.white, fontWeight: FontWeight.bold)
               : const TextStyle(
-                  color: Colors.white54, fontWeight: FontWeight.bold),
+                  color: Colors.grey, fontWeight: FontWeight.bold),
         ),
       ),
     );

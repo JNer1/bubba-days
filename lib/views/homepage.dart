@@ -9,10 +9,30 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
+  Color shade850 = const Color(0xFF303030);
+  int currentIndex = 0;
+
   @override
   Widget build(BuildContext context) {
-    return const Scaffold(
-      body: HomePageStream(),
+    return Scaffold(
+      body: const HomePageStream(),
+      bottomNavigationBar: BottomNavigationBar(
+        backgroundColor: shade850,
+        selectedItemColor: Colors.indigo[300],
+        unselectedItemColor: Colors.grey[600],
+        currentIndex: currentIndex,
+        onTap: (index) => setState(() => currentIndex = index),
+        items: const [
+          BottomNavigationBarItem(
+            icon: Icon(Icons.home),
+            label: "Home",
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.person),
+            label: "About",
+          ),
+        ],
+      ),
     );
   }
 }

@@ -34,7 +34,7 @@ class PreviousPostButton extends StatelessWidget {
               ? const TextStyle(
                   color: Colors.white, fontWeight: FontWeight.bold)
               : const TextStyle(
-                  color: Colors.white54, fontWeight: FontWeight.bold),
+                  color: Colors.grey, fontWeight: FontWeight.bold),
         ),
       ),
     );

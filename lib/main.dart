@@ -16,9 +16,10 @@ void main() async {
 class MyApp extends StatelessWidget {
   const MyApp({Key? key}) : super(key: key);
 
+  static const shade850 = Color(0xFF303030);
+
   @override
   Widget build(BuildContext context) {
-    const shade850 = Color(0xFF303030);
     return MaterialApp(
       title: 'Bubba Days',
       theme: ThemeData(
@@ -30,7 +31,6 @@ class MyApp extends StatelessWidget {
         ),
         scaffoldBackgroundColor: Colors.grey.shade900,
         primarySwatch: Colors.indigo,
-        highlightColor: Colors.indigoAccent,
         textTheme: GoogleFonts.workSansTextTheme(ThemeData.dark().textTheme),
       ),
       home: const HomePage(),

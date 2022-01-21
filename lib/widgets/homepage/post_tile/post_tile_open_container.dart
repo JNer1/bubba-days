@@ -27,11 +27,11 @@ class PostTileOpenContainer extends StatelessWidget {
             children: [
               Text(
                 title,
-                style: TextStyle(
+                style: const TextStyle(
                   fontSize: 25,
-                  color: Colors.grey.shade50,
+                  color: Colors.white,
                   fontWeight: FontWeight.bold,
-                  shadows: const [
+                  shadows: [
                     Shadow(
                       offset: Offset(1, 1),
                     ),
