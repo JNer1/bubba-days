@@ -44,6 +44,7 @@ class _HomePageStreamState extends State<HomePageStream> {
               centerTitle: true,
               titleTextStyle: GoogleFonts.workSans(
                   fontWeight: FontWeight.w600, fontSize: 20),
+              elevation: 3,
               floating: true,
               snap: true,
             ),

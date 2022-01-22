@@ -23,9 +23,13 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'Bubba Days',
       theme: ThemeData(
-        appBarTheme: const AppBarTheme(
+        appBarTheme: AppBarTheme(
+          titleTextStyle: GoogleFonts.workSans(
+            textStyle:
+                const TextStyle(fontWeight: FontWeight.bold, fontSize: 20),
+          ),
           backgroundColor: shade850,
-          systemOverlayStyle: SystemUiOverlayStyle(
+          systemOverlayStyle: const SystemUiOverlayStyle(
             statusBarColor: Colors.transparent,
           ),
         ),
