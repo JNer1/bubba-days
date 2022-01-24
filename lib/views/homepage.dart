@@ -12,13 +12,16 @@ class HomePage extends StatefulWidget {
 class _HomePageState extends State<HomePage> {
   Color shade850 = const Color(0xFF303030);
   int currentIndex = 0;
-  final List<Widget> views = [const HomePageStream(), const AboutMeView()];
+  final List<Widget> navbarViews = [
+    const HomePageStream(),
+    const AboutMeView()
+  ];
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       body: IndexedStack(
-        children: views,
+        children: navbarViews,
         index: currentIndex,
       ),
       bottomNavigationBar: BottomNavigationBar(
