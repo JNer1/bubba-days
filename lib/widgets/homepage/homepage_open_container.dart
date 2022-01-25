@@ -22,6 +22,7 @@ class HomePageOpenContainer extends StatelessWidget {
     return Padding(
       padding: const EdgeInsets.only(top: 8, bottom: 8),
       child: OpenContainer(
+        closedElevation: 1,
         transitionDuration: const Duration(milliseconds: 300),
         closedShape: RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(8),
