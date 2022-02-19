@@ -36,12 +36,17 @@ class MyApp extends StatelessWidget {
       child: MaterialApp(
         title: 'Bubba Days',
         theme: ThemeData(
-          brightness: Brightness.dark,
           useMaterial3: true,
+          brightness: Brightness.dark,
+          colorSchemeSeed: Colors.deepPurple,
+          textTheme:
+              GoogleFonts.nunitoSansTextTheme(ThemeData.dark().textTheme),
           appBarTheme: AppBarTheme(
-            titleTextStyle: GoogleFonts.workSans(
-              textStyle:
-                  const TextStyle(fontWeight: FontWeight.bold, fontSize: 20),
+            titleTextStyle: GoogleFonts.nunitoSans(
+              textStyle: const TextStyle(
+                fontWeight: FontWeight.bold,
+                fontSize: 20,
+              ),
             ),
             backgroundColor: shade850,
             systemOverlayStyle: const SystemUiOverlayStyle(
@@ -49,8 +54,6 @@ class MyApp extends StatelessWidget {
             ),
           ),
           scaffoldBackgroundColor: Colors.grey.shade900,
-          primarySwatch: Colors.indigo,
-          textTheme: GoogleFonts.workSansTextTheme(ThemeData.dark().textTheme),
         ),
         home: const LoginAuthenticationWrapper(),
       ),

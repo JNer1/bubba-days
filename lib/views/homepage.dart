@@ -23,7 +23,7 @@ class _HomePageState extends State<HomePage> {
       body: navbarViews[currentIndex],
       bottomNavigationBar: BottomNavigationBar(
         backgroundColor: shade850,
-        selectedItemColor: Colors.indigo[300],
+        selectedItemColor: const Color.fromARGB(255, 154, 140, 182),
         unselectedItemColor: Colors.grey[600],
         showUnselectedLabels: false,
         showSelectedLabels: true,
