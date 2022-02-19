@@ -1,8 +1,11 @@
-import 'package:bubba_days/views/homepage.dart';
+import 'package:bubba_days/auth/authentication_service.dart';
+import 'package:bubba_days/auth/login/login_authentication_wrapper.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/services.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:provider/provider.dart';
 import 'firebase_options.dart';
 
 void main() async {
@@ -20,33 +23,40 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      title: 'Bubba Days',
-      theme: ThemeData(
-        appBarTheme: AppBarTheme(
-          titleTextStyle: GoogleFonts.workSans(
-            textStyle:
-                const TextStyle(fontWeight: FontWeight.bold, fontSize: 20),
-          ),
-          backgroundColor: shade850,
-          systemOverlayStyle: const SystemUiOverlayStyle(
-            statusBarColor: Colors.transparent,
-          ),
+    return MultiProvider(
+      providers: [
+        Provider<AuthenticationService>(
+          create: (_) => AuthenticationService(FirebaseAuth.instance),
         ),
-        scaffoldBackgroundColor: Colors.grey.shade900,
-        primarySwatch: Colors.indigo,
-        textTheme: GoogleFonts.workSansTextTheme(ThemeData.dark().textTheme),
+        StreamProvider(
+            create: (context) =>
+                context.read<AuthenticationService>().authStateChanges,
+            initialData: null)
+      ],
+      child: MaterialApp(
+        title: 'Bubba Days',
+        theme: ThemeData(
+          useMaterial3: true,
+          brightness: Brightness.dark,
+          colorSchemeSeed: Colors.deepPurple,
+          textTheme:
+              GoogleFonts.nunitoSansTextTheme(ThemeData.dark().textTheme),
+          appBarTheme: AppBarTheme(
+            titleTextStyle: GoogleFonts.nunitoSans(
+              textStyle: const TextStyle(
+                fontWeight: FontWeight.bold,
+                fontSize: 20,
+              ),
+            ),
+            backgroundColor: shade850,
+            systemOverlayStyle: const SystemUiOverlayStyle(
+              statusBarColor: Colors.transparent,
+            ),
+          ),
+          scaffoldBackgroundColor: Colors.grey.shade900,
+        ),
+        home: const LoginAuthenticationWrapper(),
       ),
-      home: const HomePage(),
     );
-  }
-}
-
-class AuthenticationWrapper extends StatelessWidget {
-  const AuthenticationWrapper({Key? key}) : super(key: key);
-
-  @override
-  Widget build(BuildContext context) {
-    return Container();
   }
 }

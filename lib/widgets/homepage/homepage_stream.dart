@@ -1,7 +1,6 @@
 import 'package:bubba_days/widgets/homepage/homepage_open_container.dart';
 import 'package:flutter/material.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
-import 'package:google_fonts/google_fonts.dart';
 
 class HomePageStream extends StatefulWidget {
   const HomePageStream({Key? key}) : super(key: key);
@@ -39,11 +38,9 @@ class _HomePageStreamState extends State<HomePageStream> {
         }
         return CustomScrollView(
           slivers: <Widget>[
-            SliverAppBar(
-              title: const Text('Bubba Days'),
+            const SliverAppBar(
+              title: Text('Bubba Days'),
               centerTitle: true,
-              titleTextStyle: GoogleFonts.workSans(
-                  fontWeight: FontWeight.w600, fontSize: 20),
               forceElevated: true,
               elevation: 3,
               floating: true,
@@ -55,10 +52,10 @@ class _HomePageStreamState extends State<HomePageStream> {
                 delegate: SliverChildBuilderDelegate((context, index) {
                   var doc = snapshot.data.docs[index];
                   return HomePageOpenContainer(
-                      title: doc.get('title'),
-                      subtitle: doc.get('subtitle'),
-                      details: doc.get('details'),
-                      thumbnail: doc.get('thumbnail'),
+                      title: doc['title'],
+                      subtitle: doc['subtitle'],
+                      details: doc['details'],
+                      thumbnail: doc['thumbnail'],
                       index: index);
                 }, childCount: snapshot.data.docs.length),
               ),

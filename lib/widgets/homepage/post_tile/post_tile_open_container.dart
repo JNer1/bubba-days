@@ -29,7 +29,6 @@ class PostTileOpenContainer extends StatelessWidget {
                 title,
                 style: const TextStyle(
                   fontSize: 25,
-                  color: Colors.white,
                   fontWeight: FontWeight.bold,
                   shadows: [
                     Shadow(

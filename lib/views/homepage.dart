@@ -1,4 +1,4 @@
-import 'package:bubba_days/views/about_me.dart';
+import 'package:bubba_days/views/valentines.dart';
 import 'package:bubba_days/widgets/homepage/homepage_stream.dart';
 import 'package:flutter/material.dart';
 
@@ -14,19 +14,16 @@ class _HomePageState extends State<HomePage> {
   int currentIndex = 0;
   final List<Widget> navbarViews = [
     const HomePageStream(),
-    const AboutMeView()
+    const ValentinesView()
   ];
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: IndexedStack(
-        children: navbarViews,
-        index: currentIndex,
-      ),
+      body: navbarViews[currentIndex],
       bottomNavigationBar: BottomNavigationBar(
         backgroundColor: shade850,
-        selectedItemColor: Colors.indigo[300],
+        selectedItemColor: const Color.fromARGB(255, 154, 140, 182),
         unselectedItemColor: Colors.grey[600],
         showUnselectedLabels: false,
         showSelectedLabels: true,
@@ -38,8 +35,8 @@ class _HomePageState extends State<HomePage> {
             label: "Home",
           ),
           BottomNavigationBarItem(
-            icon: Icon(Icons.person),
-            label: "About",
+            icon: Icon(Icons.favorite),
+            label: "Love",
           ),
         ],
       ),
