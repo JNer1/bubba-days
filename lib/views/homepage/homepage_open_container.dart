@@ -1,8 +1,8 @@
-import 'package:bubba_days/widgets/homepage/post_tile/post_tile_open_container.dart';
 import 'package:flutter/material.dart';
-import 'package:bubba_days/views/details.dart';
-
+import 'package:bubba_days/views/blog_details/blog_details_stream.dart';
 import 'package:animations/animations.dart';
+
+import 'post_tile/post_tile_open_container.dart';
 
 class HomePageOpenContainer extends StatelessWidget {
   const HomePageOpenContainer(
@@ -37,7 +37,7 @@ class HomePageOpenContainer extends StatelessWidget {
           );
         },
         openBuilder: (context, action) {
-          return BlogDetailsView(
+          return BlogDetailsStream(
             index: index,
           );
         },

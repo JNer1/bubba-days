@@ -1,4 +1,4 @@
-import 'package:bubba_days/views/details.dart';
+import 'package:bubba_days/views/blog_details/blog_details_stream.dart';
 import 'package:flutter/material.dart';
 
 class NextButton extends StatelessWidget {
@@ -16,7 +16,7 @@ class NextButton extends StatelessWidget {
                 Navigator.pushReplacement(
                   context,
                   MaterialPageRoute(
-                    builder: (context) => BlogDetailsView(index: index - 1),
+                    builder: (context) => BlogDetailsStream(index: index - 1),
                   ),
                 );
               }

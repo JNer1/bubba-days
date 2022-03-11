@@ -1,4 +1,4 @@
-import 'package:bubba_days/views/homepage.dart';
+import 'package:bubba_days/views/homepage/homepage.dart';
 import 'package:flutter/material.dart';
 
 import 'package:firebase_auth/firebase_auth.dart';

@@ -1,8 +1,9 @@
-import 'package:bubba_days/views/picture_page_two.dart';
-import 'package:bubba_days/views/type_page.dart';
 import 'package:flutter/material.dart';
+
 import 'heart_page.dart';
 import 'picture_page_one.dart';
+import 'picture_page_two.dart';
+import 'type_page.dart';
 
 class ValentinesView extends StatefulWidget {
   const ValentinesView({Key? key}) : super(key: key);

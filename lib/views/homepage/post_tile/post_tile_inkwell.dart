@@ -1,7 +1,7 @@
-import 'package:bubba_days/views/details.dart';
-import 'package:bubba_days/widgets/homepage/post_tile/thumbnail.dart';
-
+import 'package:bubba_days/views/blog_details/blog_details_stream.dart';
 import 'package:flutter/material.dart';
+
+import 'thumbnail.dart';
 
 class PostTileInkWell extends StatelessWidget {
   const PostTileInkWell(
@@ -23,7 +23,7 @@ class PostTileInkWell extends StatelessWidget {
         Navigator.push(
           context,
           MaterialPageRoute(
-            builder: (context) => BlogDetailsView(index: index),
+            builder: (context) => BlogDetailsStream(index: index),
           ),
         );
       },

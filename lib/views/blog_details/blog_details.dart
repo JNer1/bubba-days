@@ -1,8 +1,9 @@
-import 'package:bubba_days/widgets/blog_details/blog_details_picture.dart';
-import 'package:bubba_days/widgets/blog_details/next_post_button.dart';
-import 'package:bubba_days/widgets/blog_details/previous_post_button.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+
+import 'blog_details_picture.dart';
+import 'next_post_button.dart';
+import 'previous_post_button.dart';
 
 class BlogDetails extends StatelessWidget {
   const BlogDetails(
