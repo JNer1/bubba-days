@@ -1,6 +1,9 @@
 import 'package:bubba_days/widgets/homepage/homepage_open_container.dart';
 import 'package:flutter/material.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:provider/provider.dart';
+
+import '../../auth/authentication_service.dart';
 
 class HomePageStream extends StatefulWidget {
   const HomePageStream({Key? key}) : super(key: key);
@@ -38,13 +41,20 @@ class _HomePageStreamState extends State<HomePageStream> {
         }
         return CustomScrollView(
           slivers: <Widget>[
-            const SliverAppBar(
-              title: Text('Bubba Days'),
+            SliverAppBar(
+              title: const Text('Bubba Days'),
               centerTitle: true,
               forceElevated: true,
               elevation: 3,
               floating: true,
               snap: true,
+              actions: [
+                IconButton(
+                    onPressed: () {
+                      showLogout(context);
+                    },
+                    icon: const Icon(Icons.logout))
+              ],
             ),
             SliverPadding(
               padding: const EdgeInsets.fromLTRB(16, 8, 16, 8),
@@ -64,5 +74,24 @@ class _HomePageStreamState extends State<HomePageStream> {
         );
       },
     );
+  }
+
+  Future<dynamic> showLogout(BuildContext context) {
+    return showDialog(
+      context: context,
+      builder: (_) => AlertDialog(
+        title: const Text('Log out?'),
+        actions: [
+          TextButton(onPressed: logOut, child: const Text('Yes')),
+          TextButton(
+              onPressed: Navigator.of(context).pop, child: const Text('No'))
+        ],
+      ),
+    );
+  }
+
+  void logOut() {
+    context.read<AuthenticationService>().logout();
+    Navigator.of(context).pop();
   }
 }
