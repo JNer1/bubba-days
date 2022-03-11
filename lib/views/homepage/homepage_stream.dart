@@ -1,9 +1,9 @@
-import 'package:bubba_days/widgets/homepage/homepage_open_container.dart';
 import 'package:flutter/material.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:provider/provider.dart';
 
 import '../../auth/authentication_service.dart';
+import 'homepage_open_container.dart';
 
 class HomePageStream extends StatefulWidget {
   const HomePageStream({Key? key}) : super(key: key);

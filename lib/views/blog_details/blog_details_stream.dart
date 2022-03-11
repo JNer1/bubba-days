@@ -1,9 +1,10 @@
-import 'package:bubba_days/widgets/blog_details/blog_details.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 
-class BlogDetailsView extends StatelessWidget {
-  BlogDetailsView({Key? key, required this.index}) : super(key: key);
+import 'blog_details.dart';
+
+class BlogDetailsStream extends StatelessWidget {
+  BlogDetailsStream({Key? key, required this.index}) : super(key: key);
   final int index;
 
   final Stream<QuerySnapshot> _detailsStream = FirebaseFirestore.instance

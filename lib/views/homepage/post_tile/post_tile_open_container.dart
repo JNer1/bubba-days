@@ -1,6 +1,6 @@
-import 'package:bubba_days/widgets/homepage/post_tile/thumbnail.dart';
-
 import 'package:flutter/material.dart';
+
+import 'thumbnail.dart';
 
 class PostTileOpenContainer extends StatelessWidget {
   const PostTileOpenContainer({

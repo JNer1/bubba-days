@@ -1,4 +1,4 @@
-import 'package:bubba_days/views/details.dart';
+import 'package:bubba_days/views/blog_details/blog_details_stream.dart';
 import 'package:flutter/material.dart';
 
 class PreviousPostButtonSlide extends StatelessWidget {
@@ -41,7 +41,7 @@ class PreviousPostButtonSlide extends StatelessWidget {
                         Animation<double> animation,
                         Animation<double> secanimation,
                       ) {
-                        return BlogDetailsView(index: index + 1);
+                        return BlogDetailsStream(index: index + 1);
                       }),
                 );
               }

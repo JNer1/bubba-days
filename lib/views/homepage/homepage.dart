@@ -1,6 +1,7 @@
-import 'package:bubba_days/views/valentines.dart';
-import 'package:bubba_days/widgets/homepage/homepage_stream.dart';
 import 'package:flutter/material.dart';
+
+import '../valentines/valentines.dart';
+import 'homepage_stream.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({Key? key}) : super(key: key);

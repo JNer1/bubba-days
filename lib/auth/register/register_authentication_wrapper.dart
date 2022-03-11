@@ -1,5 +1,5 @@
 import 'package:bubba_days/auth/register/register_page.dart';
-import 'package:bubba_days/views/homepage.dart';
+import 'package:bubba_days/views/homepage/homepage.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 
 import 'package:flutter/material.dart';
